@@ -30,6 +30,7 @@ After completing my B.S. in Computer Science at Louisiana State University of Al
 
 # 🌐 Live Demo
 You can view the deployed website here:
+https://valeriutarlev.github.io/
 
 # 📫 Contact
   * Email: valeriu.tarlev17@gmail.com
