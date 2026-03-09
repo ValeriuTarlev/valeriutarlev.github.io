@@ -26,3 +26,4 @@ https://valeriutarlev.github.io
 - Email: valeriu.tarlev17@gmail.com
 - LinkedIn: linkedin.com/in/valeriutarlev
 - GitHub: github.com/ValeriuTarlev
+
