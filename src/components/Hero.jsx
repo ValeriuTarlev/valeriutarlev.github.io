@@ -1,14 +1,12 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import Particles from '@tsparticles/react'
-import { loadSlim } from '@tsparticles/slim'
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 
 const phrases = [
-  'IT Infrastructure & Security Professional',
-  'Systems Administrator',
   'Network Engineer',
+  'IT Infrastructure & Security Professional',
   'Cybersecurity Enthusiast',
+  'Systems Administrator',
 ]
 
 function useTypingEffect(phrases) {
@@ -39,14 +37,18 @@ function useTypingEffect(phrases) {
   return text
 }
 
+// Static particle data — generated once, never changes
+const PARTICLES = Array.from({ length: 30 }, (_, i) => ({
+  id: i,
+  left: `${(i * 37 + 11) % 100}%`,
+  size: ((i * 13 + 7) % 3) + 1,
+  delay: `${(i * 1.3) % 8}s`,
+  duration: `${((i * 7 + 12) % 10) + 12}s`,
+  opacity: (((i * 17 + 5) % 25) + 8) / 100,
+}))
+
 export default function Hero() {
   const typedText = useTypingEffect(phrases)
-  const [particlesInit, setParticlesInit] = useState(false)
-
-  const initParticles = useCallback(async (engine) => {
-    await loadSlim(engine)
-    setParticlesInit(true)
-  }, [])
 
   return (
     <section
@@ -61,48 +63,25 @@ export default function Hero() {
         background: 'radial-gradient(ellipse at 50% 0%, #1a0800 0%, #0a0a0a 70%)',
       }}
     >
-      {/* Particles */}
-      <Particles
-        id="tsparticles"
-        init={initParticles}
-        style={{ position: 'absolute', inset: 0 }}
-        options={{
-          background: { color: { value: 'transparent' } },
-          fpsLimit: 30,
-          interactivity: {
-            events: {
-              onHover: { enable: true, mode: 'grab' },
-              onClick: { enable: false },
-            },
-            modes: {
-              grab: { distance: 120, links: { opacity: 0.4 } },
-            },
-          },
-          particles: {
-            color: { value: '#FF4500' },
-            links: {
-              color: '#FF4500',
-              distance: 120,
-              enable: true,
-              opacity: 0.12,
-              width: 1,
-            },
-            move: {
-              direction: 'none',
-              enable: true,
-              outModes: { default: 'bounce' },
-              random: true,
-              speed: 0.5,
-              straight: false,
-            },
-            number: { density: { enable: true, area: 900 }, value: 35 },
-            opacity: { value: { min: 0.1, max: 0.35 } },
-            shape: { type: 'circle' },
-            size: { value: { min: 1, max: 2.5 } },
-          },
-          detectRetina: false,
-        }}
-      />
+      {/* CSS particles — no canvas, no JS loop */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+        {PARTICLES.map(p => (
+          <span
+            key={p.id}
+            style={{
+              position: 'absolute',
+              bottom: '-4px',
+              left: p.left,
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              borderRadius: '50%',
+              background: '#FF4500',
+              opacity: p.opacity,
+              animation: `floatUp ${p.duration} ${p.delay} linear infinite`,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Content */}
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '0 1.5rem', maxWidth: '860px' }}>
@@ -261,6 +240,11 @@ export default function Hero() {
         @keyframes blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }
+        }
+        @keyframes floatUp {
+          0%   { transform: translateY(0)     scaleX(1);   opacity: var(--op, 0.2); }
+          50%  { transform: translateY(-50vh) scaleX(1.2); opacity: calc(var(--op, 0.2) * 0.6); }
+          100% { transform: translateY(-100vh) scaleX(1);  opacity: 0; }
         }
       `}</style>
     </section>
