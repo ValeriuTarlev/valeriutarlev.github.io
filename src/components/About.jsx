@@ -77,7 +77,7 @@ export default function About() {
               padding: '3px',
             }}>
               <img
-                src="/IMG_3174 (2).jpg"
+                src="/profile_photo.jpg"
                 alt="Valeriu Tarlev"
                 loading="lazy"
                 style={{
