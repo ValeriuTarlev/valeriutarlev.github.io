@@ -68,24 +68,23 @@ export default function Hero() {
         style={{ position: 'absolute', inset: 0 }}
         options={{
           background: { color: { value: 'transparent' } },
-          fpsLimit: 60,
+          fpsLimit: 30,
           interactivity: {
             events: {
               onHover: { enable: true, mode: 'grab' },
-              onClick: { enable: true, mode: 'push' },
+              onClick: { enable: false },
             },
             modes: {
-              grab: { distance: 160, links: { opacity: 0.5 } },
-              push: { quantity: 2 },
+              grab: { distance: 120, links: { opacity: 0.4 } },
             },
           },
           particles: {
             color: { value: '#FF4500' },
             links: {
               color: '#FF4500',
-              distance: 130,
+              distance: 120,
               enable: true,
-              opacity: 0.15,
+              opacity: 0.12,
               width: 1,
             },
             move: {
@@ -93,15 +92,15 @@ export default function Hero() {
               enable: true,
               outModes: { default: 'bounce' },
               random: true,
-              speed: 0.6,
+              speed: 0.5,
               straight: false,
             },
-            number: { density: { enable: true, area: 900 }, value: 60 },
-            opacity: { value: { min: 0.1, max: 0.4 } },
+            number: { density: { enable: true, area: 900 }, value: 35 },
+            opacity: { value: { min: 0.1, max: 0.35 } },
             shape: { type: 'circle' },
             size: { value: { min: 1, max: 2.5 } },
           },
-          detectRetina: true,
+          detectRetina: false,
         }}
       />
 

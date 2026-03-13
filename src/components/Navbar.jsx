@@ -17,20 +17,33 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+    // Detect when hero leaves view to trigger navbar background
+    const heroEl = document.getElementById('home')
+    const scrolledObserver = new IntersectionObserver(
+      ([entry]) => setScrolled(!entry.isIntersecting),
+      { threshold: 0.1 }
+    )
+    if (heroEl) scrolledObserver.observe(heroEl)
 
-      const sections = navLinks.map(l => l.href.replace('#', ''))
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i])
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActive(sections[i])
-          break
-        }
-      }
+    // Detect active section using center-of-viewport rootMargin
+    const sectionIds = navLinks.map(l => l.href.replace('#', ''))
+    const activeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id)
+        })
+      },
+      { rootMargin: '-40% 0px -40% 0px' }
+    )
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id)
+      if (el) activeObserver.observe(el)
+    })
+
+    return () => {
+      scrolledObserver.disconnect()
+      activeObserver.disconnect()
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (

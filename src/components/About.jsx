@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion'
 const stats = [
   { value: '1,000+', label: 'Devices Managed' },
   { value: '2,000+', label: 'Users Supported' },
-  { value: '30-60', label: 'Tickets / Month' },
+  { value: '120-150', label: 'Tickets / Month' },
   { value: '4', label: 'Student Workers Supervised' },
   { value: '3', label: 'Certifications' },
   { value: '2 Yrs', label: 'Team Captain' },
@@ -70,15 +70,16 @@ export default function About() {
           >
             <div style={{
               position: 'relative',
-              width: '260px',
-              height: '260px',
+              width: '310px',
+              height: '310px',
               borderRadius: '50%',
               background: 'linear-gradient(135deg, #FF4500, #FF6B35)',
               padding: '3px',
             }}>
               <img
-                src="/Profile_Image.jpg"
+                src="/IMG_3174 (2).jpg"
                 alt="Valeriu Tarlev"
+                loading="lazy"
                 style={{
                   width: '100%',
                   height: '100%',

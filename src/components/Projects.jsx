@@ -27,6 +27,23 @@ const projects = [
     status: 'Ongoing',
     statusColor: '#3b82f6',
   },
+  {
+    title: 'Forge — AI Workout Tracker',
+    description: 'A dark, native-feeling PWA for logging gym sessions built with React, Vite, and the Anthropic API. Tracks sets, reps, weight, and RPE across a 4-day training split. Features an AI-generated 2-week training cycle based on workout history, a context-aware AI coach chat, a circular rest timer, and full session history. Installable to iPhone home screen via PWA.',
+    tags: ['React', 'Vite', 'Anthropic API', 'PWA', 'AI', 'Vercel'],
+    github: 'https://github.com/ValeriuTarlev/forge-workout',
+    status: 'Completed',
+    statusColor: '#22c55e',
+  },
+  {
+    title: 'Personal Portfolio Website',
+    description: 'Designed and built this portfolio site from scratch using React and Vite. Features tsParticles hero background, Framer Motion animations, responsive layout, and automated deployment via GitHub Actions to GitHub Pages.',
+    tags: ['React', 'Vite', 'Framer Motion', 'tsParticles', 'GitHub Actions', 'GitHub Pages'],
+    github: 'https://github.com/ValeriuTarlev/valeriutarlev.github.io',
+    live: 'https://valeriutarlev.github.io',
+    status: 'Live',
+    statusColor: '#22c55e',
+  },
 ]
 
 export default function Projects() {
@@ -111,26 +128,47 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* GitHub Link */}
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  color: '#FF6B35',
-                  fontSize: '0.85rem',
-                  fontWeight: 600,
-                  transition: 'gap 0.2s',
-                  marginTop: 'auto',
-                }}
-                onMouseEnter={e => e.currentTarget.style.gap = '0.8rem'}
-                onMouseLeave={e => e.currentTarget.style.gap = '0.5rem'}
-              >
-                <FiGithub size={16} /> View on GitHub <FiExternalLink size={13} />
-              </a>
+              {/* Links */}
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: 'auto' }}>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    color: '#FF6B35',
+                    fontSize: '0.85rem',
+                    fontWeight: 600,
+                    transition: 'gap 0.2s',
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.gap = '0.8rem'}
+                  onMouseLeave={e => e.currentTarget.style.gap = '0.5rem'}
+                >
+                  <FiGithub size={16} /> View on GitHub <FiExternalLink size={13} />
+                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      color: '#a0a0a0',
+                      fontSize: '0.85rem',
+                      fontWeight: 600,
+                      transition: 'gap 0.2s',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.gap = '0.8rem'}
+                    onMouseLeave={e => e.currentTarget.style.gap = '0.5rem'}
+                  >
+                    <FiExternalLink size={16} /> Live Site
+                  </a>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
