@@ -7,7 +7,7 @@ Personal portfolio website built with React + Vite.
 - React 18
 - Vite
 - Framer Motion
-- tsParticles
+- CSS Particles
 - React Icons
 
 ## Development
