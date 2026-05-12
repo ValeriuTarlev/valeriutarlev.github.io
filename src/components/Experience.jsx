@@ -16,7 +16,7 @@ const experiences = [
       'Manage student and staff accounts and laptop configurations via Microsoft Intune and Azure.',
       'Set up computers, projectors, TVs, and smart boards for faculty, staff, and students.',
       'Configure and troubleshoot Xerox printers and peripheral devices.',
-      'Manage and resolve 30–60 support tickets per month through Freshdesk, supporting 2,000+ students and staff.',
+      'Manage and resolve 120–150 support tickets per month through Freshdesk, supporting 2,000+ students and staff.',
       'Supervise and coordinate a team of 4 student IT workers.',
     ],
   },
