@@ -8,7 +8,7 @@ const experiences = [
     title: 'PC Support Specialist',
     company: 'Louisiana State University at Alexandria',
     type: 'Full-time · On-site',
-    period: 'July 2024 — Present',
+    period: 'July 2025 — Present',
     bullets: [
       'Managing and maintaining over 1,000 university devices (servers, workstations, laptops, and virtual machines) using KACE Systems Management, Microsoft Intune, and Microsoft Azure.',
       'Deploy, configure, image, and upgrade devices across the university infrastructure.',
