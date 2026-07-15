@@ -37,8 +37,8 @@ const projects = [
   },
   {
     title: 'Personal Portfolio Website',
-    description: 'Designed and built this portfolio site from scratch using React and Vite. Features tsParticles hero background, Framer Motion animations, responsive layout, and automated deployment via GitHub Actions to GitHub Pages.',
-    tags: ['React', 'Vite', 'Framer Motion', 'tsParticles', 'GitHub Actions', 'GitHub Pages'],
+    description: 'Designed and built this portfolio site from scratch using React and Vite. Features a CSS particle hero background, Framer Motion animations, responsive layout, and automated deployment via GitHub Actions to GitHub Pages.',
+    tags: ['React', 'Vite', 'Framer Motion', 'CSS Animations', 'GitHub Actions', 'GitHub Pages'],
     github: 'https://github.com/ValeriuTarlev/valeriutarlev.github.io',
     live: 'https://valeriutarlev.github.io',
     status: 'Live',

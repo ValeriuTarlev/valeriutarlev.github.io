@@ -6,7 +6,7 @@ const stats = [
   { value: '2,000+', label: 'Users Supported' },
   { value: '120-150', label: 'Tickets / Month' },
   { value: '4', label: 'Student Workers Supervised' },
-  { value: '3', label: 'Certifications' },
+  { value: '6', label: 'Certifications' },
   { value: '2 Yrs', label: 'Team Captain' },
 ]
 
@@ -99,7 +99,7 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1rem', fontSize: '0.97rem' }}>
-              I&apos;m an IT and Cybersecurity professional with a B.S. in Computer Science from Louisiana State University at Alexandria (2025) and CompTIA Security+ certified. I specialize in endpoint management, system administration, IT infrastructure, and cybersecurity monitoring, with hands-on experience managing enterprise-scale environments.
+              I&apos;m an IT and Cybersecurity professional with a B.S. in Computer Science from Louisiana State University at Alexandria (2025), CompTIA Security+ certified, and Cisco CCNA certified. I specialize in endpoint management, system administration, IT infrastructure, networking, and cybersecurity monitoring, with hands-on experience managing enterprise-scale environments.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1rem', fontSize: '0.97rem' }}>
               In my current role at LSUA, I manage over 1,000 devices using KACE, Microsoft Intune, and Microsoft Azure, monitor endpoint security through CrowdStrike, and supervise a team of student IT workers — all while supporting 2,000+ students and staff.

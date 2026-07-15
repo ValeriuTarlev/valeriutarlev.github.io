@@ -136,7 +136,7 @@ export default function Hero() {
           transition={{ delay: 0.65 }}
           style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '0.6rem', letterSpacing: '0.04em' }}
         >
-          B.S. Computer Science &nbsp;|&nbsp; CompTIA Security+ &nbsp;|&nbsp; LSUA 2025
+          B.S. Computer Science &nbsp;|&nbsp; CompTIA Security+ &nbsp;|&nbsp; CCNA &nbsp;|&nbsp; LSUA 2025
         </motion.p>
 
         <motion.p

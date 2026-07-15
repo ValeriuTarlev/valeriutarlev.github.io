@@ -13,6 +13,15 @@ const certifications = [
     color: '#FF4500',
   },
   {
+    name: 'Cisco Certified Network Associate (CCNA)',
+    issuer: 'Cisco',
+    issued: 'July 2026',
+    expires: 'July 2029',
+    credentialUrl: 'https://www.credly.com/badges/f89ffb10-7e49-458a-a49b-42fbdd781adf/public_url',
+    logo: '/ccna_med.jpg',
+    color: '#049FD9',
+  },
+  {
     name: 'Fortinet Certified Fundamentals Cybersecurity',
     issuer: 'Fortinet',
     issued: 'May 2025',
